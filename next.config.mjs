@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  devIndicators: {
+    appIsrStatus: false,
+  },
+  transpilePackages: ["three"],
+};
 
 export default nextConfig;
