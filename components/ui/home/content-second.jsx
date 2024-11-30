@@ -47,7 +47,7 @@ export default function ContentSecond() {
           a symbol of luxury and individuality in the world of fashion.
         </BlurFade>
       </div>
-      <div className="max-w-xl text-right w-full mt-16 pointer-events-auto">
+      <div className="max-w-xl text-right w-full mt-12 pointer-events-auto">
         <BlurFade delay={0.25 + 5 * 0.05} inView>
           <Link href="/gallery">
             <Button

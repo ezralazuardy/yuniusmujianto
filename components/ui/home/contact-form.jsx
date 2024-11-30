@@ -1,5 +1,6 @@
 "use client";
 
+import BlurFade from "@/components/ui/blur-fade";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -15,9 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "../textarea";
-import Link from "next/link";
-import { IconBrandWhatsapp, IconMail } from "@tabler/icons-react";
+import { Textarea } from "@/components/ui/textarea";
 
 const FormSchema = z.object({
   name: z
@@ -78,52 +77,62 @@ export default function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          name="name"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Full Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Type your full name" {...field} />
-              </FormControl>
-              <FormDescription>Max 100 characters.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="email"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email Address</FormLabel>
-              <FormControl>
-                <Input placeholder="Type your email address" {...field} />
-              </FormControl>
-              <FormDescription>Must be a valid email address.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="message"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Messages</FormLabel>
-              <FormControl>
-                <Textarea placeholder="Type your message here." {...field} />
-              </FormControl>
-              <FormDescription>Max 3000 characters.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <BlurFade delay={0.25 + 1 * 0.05} inView>
+          <FormField
+            name="name"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Full Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Type your full name" {...field} />
+                </FormControl>
+                <FormDescription>Max 100 characters.</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </BlurFade>
+        <BlurFade delay={0.25 + 2 * 0.05} inView>
+          <FormField
+            name="email"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email Address</FormLabel>
+                <FormControl>
+                  <Input placeholder="Type your email address" {...field} />
+                </FormControl>
+                <FormDescription>
+                  Must be a valid email address.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </BlurFade>
+        <BlurFade delay={0.25 + 3 * 0.05} inView>
+          <FormField
+            name="message"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Messages</FormLabel>
+                <FormControl>
+                  <Textarea placeholder="Type your message here." {...field} />
+                </FormControl>
+                <FormDescription>Max 3000 characters.</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </BlurFade>
         <div className="w-full text-right">
-          <Button type="submit" disabled={state.submitting}>
-            {state.submitting ? "SENDING..." : "SEND MESSAGE"}
-          </Button>
+          <BlurFade delay={0.25 + 4 * 0.05} inView>
+            <Button type="submit" disabled={state.submitting}>
+              {state.submitting ? "SENDING..." : "SEND MESSAGE"}
+            </Button>
+          </BlurFade>
         </div>
       </form>
     </Form>
