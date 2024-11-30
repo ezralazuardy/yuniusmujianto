@@ -1,7 +1,7 @@
 "use client";
 
 import * as THREE from "three";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
 import { Image, Scroll, ScrollControls, useScroll } from "@react-three/drei";
 import { proxy, useSnapshot } from "valtio";
@@ -17,15 +17,34 @@ const state = proxy({
 });
 
 export default function Tiles() {
+  const frame = useRef(null);
+  const canvas = useRef(null);
+
+  useEffect(() => {
+    const f = frame?.current;
+    const c = canvas?.current;
+
+    if (!f || !c || typeof window === "undefined" || document === "undefined")
+      return;
+
+    setTimeout(() => {
+      f.classList.add("opacity-100");
+      f.classList.remove("opacity-0");
+    }, 2000);
+  });
+
   return (
-    <Canvas
-      style={{ width: "100%", height: "100vh" }}
-      gl={{ antialias: false }}
-      dpr={[1, 1.5]}
-      onPointerMissed={() => (state.clicked = null)}
-    >
-      <Items />
-    </Canvas>
+    <div ref={frame} className="opacity-0 transition-opacity duration-500">
+      <Canvas
+        ref={canvas}
+        style={{ width: "100%", height: "100vh" }}
+        gl={{ antialias: false, performance: "low-power" }}
+        dpr={[1, 1.5]}
+        onPointerMissed={() => (state.clicked = null)}
+      >
+        <Items />
+      </Canvas>
+    </div>
   );
 }
 

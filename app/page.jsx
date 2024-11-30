@@ -4,21 +4,21 @@ import Link from "next/link";
 import Spectral from "@/lib/fonts/spectral";
 import BlurFade from "@/components/ui/blur-fade";
 import Header from "@/components/ui/home/header";
-import Footer from "@/components/ui/home/footer";
 import Video from "@/components/ui/home/video";
 import Contact from "@/components/ui/home/contact";
 import ContentFirst from "@/components/ui/home/content-first";
 import ContentSecond from "@/components/ui/home/content-second";
 import Sponsor from "@/components/ui/home/sponsor";
 import { Button } from "@/components/ui/button";
+import Navigation from "@/components/ui/navigation";
 import {
+  IconMail,
   IconBrandWhatsapp,
   IconBrandInstagram,
   IconBrandFacebook,
   IconBrandYoutube,
   IconBrandTiktok,
   IconChevronsDown,
-  IconMail,
 } from "@tabler/icons-react";
 import { useEffect, useRef } from "react";
 
@@ -33,6 +33,9 @@ export default function Home() {
   const subtitle2 = useRef(null);
   const button = useRef(null);
   const hint = useRef(null);
+  const footerNavigation = useRef(null);
+  const footerSocial = useRef(null);
+  const footerCopyright = useRef(null);
 
   useEffect(() => {
     const b = blur?.current;
@@ -45,6 +48,9 @@ export default function Home() {
     const st2 = subtitle2?.current;
     const bt = button?.current;
     const hn = hint?.current;
+    const fn = footerNavigation?.current;
+    const fs = footerSocial?.current;
+    const fc = footerCopyright?.current;
 
     if (
       !v ||
@@ -57,6 +63,9 @@ export default function Home() {
       !st2 ||
       !bt ||
       !hn ||
+      !fn ||
+      !fs ||
+      !fc ||
       typeof window === "undefined" ||
       document === "undefined"
     )
@@ -146,6 +155,36 @@ export default function Home() {
       hn.classList.remove("opacity-100");
     }
 
+    function showFooterNavigation() {
+      fn.classList.add("opacity-100");
+      fn.classList.remove("opacity-0");
+    }
+
+    function hideFooterNavigation() {
+      fn.classList.add("opacity-0");
+      fn.classList.remove("opacity-100");
+    }
+
+    function showFooterSocial() {
+      fs.classList.add("opacity-100");
+      fs.classList.remove("opacity-0");
+    }
+
+    function hideFooterSocial() {
+      fs.classList.add("opacity-0");
+      fs.classList.remove("opacity-100");
+    }
+
+    function showFooterCopyright() {
+      fc.classList.add("opacity-100");
+      fc.classList.remove("opacity-0");
+    }
+
+    function hideFooterCopyright() {
+      fc.classList.add("opacity-0");
+      fc.classList.remove("opacity-100");
+    }
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight;
@@ -201,6 +240,27 @@ export default function Home() {
         showHint();
       } else {
         hideHint();
+      }
+
+      // show or hide footer navigation
+      if (scrollPercent >= 99) {
+        showFooterNavigation();
+      } else {
+        hideFooterNavigation();
+      }
+
+      // show or hide footer social
+      if (scrollPercent >= 98) {
+        showFooterSocial();
+      } else {
+        hideFooterSocial();
+      }
+
+      // show or hide footer copyright
+      if (scrollPercent >= 97) {
+        showFooterCopyright();
+      } else {
+        hideFooterCopyright();
       }
     };
 
@@ -289,7 +349,88 @@ export default function Home() {
       ></div>
       <div ref={footer} className="hidden bottom-0 start-0 w-full z-50">
         <div className="relative w-full">
-          <Footer />
+          <div className="pb-10 text-center flex flex-col text-gray-200">
+            <div
+              ref={footerNavigation}
+              className="opacity-100 transition-opacity duration-500 flex w-full justify-center"
+            >
+              <Navigation />
+            </div>
+            <div
+              ref={footerSocial}
+              className="opacity-100 transition-opacity duration-500 flex justify-center font-light text-md pt-6"
+            >
+              <div className="me-8">
+                <Link href="https://wa.me/6281225822417" target="_blank">
+                  <IconMail
+                    size={20}
+                    stroke={1}
+                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
+                  />
+                </Link>
+              </div>
+              <div className="me-8">
+                <Link href="https://wa.me/6281225822417" target="_blank">
+                  <IconBrandWhatsapp
+                    size={20}
+                    stroke={1}
+                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
+                  />
+                </Link>
+              </div>
+              <div className="me-8">
+                <Link
+                  href="https://instagram.com/yunius_mujianto"
+                  target="_blank"
+                >
+                  <IconBrandInstagram
+                    size={20}
+                    stroke={1}
+                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
+                  />
+                </Link>
+              </div>
+              <div className="me-8">
+                <Link href="https://facebook.com/yunius.bridal" target="_blank">
+                  <IconBrandFacebook
+                    size={20}
+                    stroke={1}
+                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
+                  />
+                </Link>
+              </div>
+              <div className="me-8">
+                <Link
+                  href="https://tiktok.com/@yunius.mujianto"
+                  target="_blank"
+                >
+                  <IconBrandTiktok
+                    size={20}
+                    stroke={1}
+                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
+                  />
+                </Link>
+              </div>
+              <div className="me-0">
+                <Link
+                  href="https://youtube.com/@yuniusmujiantofashiondesig9646"
+                  target="_blank"
+                >
+                  <IconBrandYoutube
+                    size={20}
+                    stroke={1}
+                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
+                  />
+                </Link>
+              </div>
+            </div>
+            <div
+              ref={footerCopyright}
+              className="opacity-100 transition-opacity duration-500 flex justify-center font-extralight text-sm text-white/80 pt-6"
+            >
+              Copyright © Yunius Mujianto 2024. All rights reserved.
+            </div>
+          </div>
         </div>
       </div>
       <div className="absolute top-0 start-0 w-full min-h-screen z-50 pointer-events-none">
