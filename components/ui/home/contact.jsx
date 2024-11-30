@@ -7,7 +7,6 @@ import {
   IconBrandWhatsapp,
   IconBrandInstagram,
   IconBrandFacebook,
-  IconBrandYoutube,
   IconBrandTiktok,
 } from "@tabler/icons-react";
 
@@ -69,20 +68,9 @@ export default function Contact() {
             </div>
           </Link>
         </BlurFade>
-        <BlurFade delay={0.25 + 8 * 0.05} inView>
-          <Link
-            href="https://youtube.com/@yuniusmujiantofashiondesig9646"
-            target="_blank"
-          >
-            <div className="flex gap-2 hover:scale-125 hover:text-white transition-all duration-300 ">
-              <IconBrandYoutube size={18} stroke={1} className="mt-0.5" />
-              <span className="text-sm">YouTube</span>
-            </div>
-          </Link>
-        </BlurFade>
       </div>
       <div className="max-w-xl font-extralight text-md text-gray-300 text-justify w-full mt-10">
-        <BlurFade delay={0.25 + 9 * 0.05} inView>
+        <BlurFade delay={0.25 + 8 * 0.05} inView>
           Or you can fill the form below to send us a message.
         </BlurFade>
       </div>
