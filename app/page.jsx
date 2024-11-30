@@ -6,6 +6,7 @@ import Spectral from "@/lib/fonts/spectral";
 import Video from "@/components/ui/home/video";
 import ContactForm from "@/components/ui/home/contact-form";
 import Navigation from "@/components/ui/navigation";
+import BlurFade from "@/components/ui/blur-fade";
 import { Parallax } from "react-parallax";
 import { Images } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,29 +30,55 @@ import { useEffect, useRef } from "react";
 export default function Home() {
   const blur = useRef(null);
   const hero = useRef(null);
-  const footerTitle = useRef(null);
+  const footer = useRef(null);
+  const video = useRef(null);
 
   useEffect(() => {
+    const b = blur?.current;
+    const h = hero?.current;
+    const f = footer?.current;
+    const v = video?.current;
+
+    if (!v || !h || !f || !v) return;
+
+    if (typeof window === "undefined" || document === "undefined") return;
+
+    const showHero = () => {
+      v.play();
+      f.classList.add("hidden");
+      f.classList.remove("fixed");
+      b.classList.add("hidden");
+      b.classList.remove("fixed");
+      h.classList.add("flex");
+      h.classList.remove("hidden");
+    };
+
+    const showFooter = () => {
+      v.play();
+      f.classList.remove("hidden");
+      f.classList.add("fixed");
+      b.classList.remove("hidden");
+      b.classList.add("fixed");
+      h.classList.remove("flex");
+      h.classList.add("hidden");
+    };
+
+    const hideHeroFooter = () => {
+      v.pause();
+    };
+
     const handleScroll = () => {
-      if (!blur || !hero || !footerTitle) return;
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight;
       const winHeight = window.innerHeight;
       const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
-      if (scrollPercent > 30) {
-        footerTitle.current.classList.remove("hidden");
-        footerTitle.current.classList.add("fixed");
-        blur.current.classList.remove("hidden");
-        blur.current.classList.add("fixed");
-        hero.current.classList.remove("flex");
-        hero.current.classList.add("hidden");
+
+      if (scrollPercent <= 25) {
+        showHero();
+      } else if (scrollPercent > 25 && scrollPercent <= 80) {
+        hideHeroFooter();
       } else {
-        footerTitle.current.classList.add("hidden");
-        footerTitle.current.classList.remove("fixed");
-        blur.current.classList.add("hidden");
-        blur.current.classList.remove("fixed");
-        hero.current.classList.add("flex");
-        hero.current.classList.remove("hidden");
+        showFooter();
       }
     };
 
@@ -65,66 +92,31 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Video />
+      <Video ref={video} />
       <div
         ref={hero}
         className="fixed top-0 start-0 w-full min-h-screen z-30 flex items-center justify-center px-10"
       >
-        <div className="text-center pt-40">
-          <div className={`${Spectral.className} text-7xl font-extralight`}>
-            The Luxurious Sense of Belonging
-          </div>
-          <div
-            className={`${Spectral.className} pt-10 text-4xl font-extralight`}
-          >
-            — YUNIUS MUJIANTO —
-          </div>
-          <div className="pt-12 text-lg font-extralight text-gray-200">
-            MODERN KEBAYA, BRIDAL, AND FASHION DESIGNER
-          </div>
-          <div className="pt-8">
-            <Link href="https://wa.me/6281225822417" target="_blank">
-              <Button
-                size="lg"
-                className="hover:shadow-2xl hover:scale-105 transition-transform duration:500"
-              >
-                <IconBrandWhatsapp className="w-5 h-5" />
-                CALL VIA WHATSAPP
-              </Button>
-            </Link>
-          </div>
-          <div className="pt-16 text-xs font-light text-gray-200 animate-pulse">
-            SCROLL BELOW TO LEARN MORE
-          </div>
-          <div className="pt-2 flex justify-center">
-            <IconChevronsDown
-              size={40}
-              stroke={0.8}
-              className="text-gray-200 animate-pulse"
-            />
-          </div>
-        </div>
+        <HeroFirst />
       </div>
       <div
         ref={blur}
         className="hidden top-0 start-0 w-full min-h-screen z-40 backdrop-blur bg-black/70"
       ></div>
-      <div ref={footerTitle} className="hidden bottom-0 start-0 w-full z-50">
+      <div ref={footer} className="hidden bottom-0 start-0 w-full z-50">
         <div className="relative w-full">
           <Footer />
         </div>
       </div>
       <div className="absolute top-0 start-0 w-full min-h-screen z-50 pointer-events-none">
         <div className="relative w-full min-h-screen pointer-events-none"></div>
-        <div className="relative bg-gradient-to-b from-transparent to-black min-h-40"></div>
-        <div className="relative [background:radial-gradient(125%_22%_at_50%_10%,#000_40%,#161617_100%)] pt-60 pb-20 flex flex-col justify-center items-center">
-          <HeroFirst />
+        <div className="relative [background:radial-gradient(125%_22%_at_50%_10%,#040404_40%,#161617_100%)] pt-60 pb-20 flex flex-col justify-center items-center border-t border-b border-gray-600">
           <HeroSecond />
+          <HeroThird />
           <Sponsor />
           <Contact />
         </div>
-        <div className="relative bg-gradient-to-t from-transparent to-[#161617] min-h-20"></div>
-        <div className="relative w-full min-h-40 pointer-events-none"></div>
+        <div className="relative w-full min-h-60 pointer-events-none"></div>
       </div>
     </>
   );
@@ -141,6 +133,59 @@ function Header() {
 }
 
 function HeroFirst() {
+  return (
+    <div className="relative min-h-screen w-full">
+      <div className="flex flex-col min-h-screen w-full justify-center text-center my-auto">
+        <div className={`${Spectral.className} text-7xl font-extralight`}>
+          <BlurFade delay={0.25 + 1 * 0.05} inView>
+            The Luxurious Sense of Belonging
+          </BlurFade>
+        </div>
+        <div className={`${Spectral.className} pt-10 text-4xl font-extralight`}>
+          <BlurFade delay={0.25 + 2 * 0.05} inView>
+            — YUNIUS MUJIANTO —
+          </BlurFade>
+        </div>
+        <div className="pt-12 text-lg font-extralight text-gray-200">
+          <BlurFade delay={0.25 + 3 * 0.05} inView>
+            MODERN KEBAYA, BRIDAL, AND FASHION DESIGNER
+          </BlurFade>
+        </div>
+        <div className="pt-8">
+          <BlurFade delay={0.25 + 4 * 0.05} inView>
+            <Link href="https://wa.me/6281225822417" target="_blank">
+              <Button
+                size="lg"
+                className="hover:shadow-2xl hover:scale-105 transition-transform duration:500"
+              >
+                <IconBrandWhatsapp className="w-5 h-5" />
+                CALL VIA WHATSAPP
+              </Button>
+            </Link>
+          </BlurFade>
+        </div>
+      </div>
+      <div className="fixed bottom-0 start-0 mb-10 w-full flex flex-col justify-center">
+        <div className="text-xs font-light text-gray-200 animate-pulse flex justify-center">
+          <BlurFade delay={0.25 + 5 * 0.05} inView>
+            SCROLL BELOW TO LEARN MORE
+          </BlurFade>
+        </div>
+        <div className="pt-2 flex justify-center">
+          <BlurFade delay={0.25 + 6 * 0.05} inView>
+            <IconChevronsDown
+              size={40}
+              stroke={0.8}
+              className="text-gray-200 animate-pulse"
+            />
+          </BlurFade>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HeroSecond() {
   return (
     <div className="grid grid-cols-5 container">
       <div className="col-span-3 flex flex-col">
@@ -170,7 +215,7 @@ function HeroFirst() {
   );
 }
 
-function HeroSecond() {
+function HeroThird() {
   return (
     <>
       <div

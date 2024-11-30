@@ -27,7 +27,7 @@ function Footer() {
       <div className="flex justify-start font-extralight text-sm text-white pt-6">
         by YUNIUS MUJIANTO
       </div>
-      <div className="flex justify-center font-extralight text-sm text-white/80 pt-6">
+      <div className="flex flex-col justify-center text-center font-extralight text-sm text-white/80 pt-6">
         Copyright © Yunius Mujianto 2024. All rights reserved.
       </div>
       <div className="flex justify-end font-extralight text-sm text-white pt-6">
