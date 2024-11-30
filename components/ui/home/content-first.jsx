@@ -9,12 +9,12 @@ export default function ContentFirst() {
         <div
           className={`${Spectral.className} max-w-xl font-extralight text-7xl text-left leading-none tracking-normal mt-3`}
         >
-          <BlurFade delay={0.25 + 3 * 0.05} inView>
+          <BlurFade delay={0.25 + 6 * 0.05} inView>
             Where Artistry Meets Elegance ~
           </BlurFade>
         </div>
         <div className="max-w-xl font-extralight text-md text-gray-300 text-justify w-full mt-12">
-          <BlurFade delay={0.25 + 4 * 0.05} inView>
+          <BlurFade delay={0.25 + 8 * 0.05} inView>
             With more than 8 years of experience, Yunius has redefined the
             Indonesian fashion industry by creating unique, luxurious kebaya and
             bridal designs under the{" "}
