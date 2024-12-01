@@ -27,7 +27,7 @@ export default function ContentSecond() {
       </div>
       <div className="w-full mt-16">
         <Parallax
-          bgImage="/images/home/image-2.jpeg"
+          bgImage="/images/home/image-2.webp"
           className="aspect-video object-cover border-t border-b border-gray-600 bg-zinc-950 max-h-screen w-full"
           strength={200}
         >

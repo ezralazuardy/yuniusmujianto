@@ -77,7 +77,7 @@ export default function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <BlurFade delay={0.25 + 1 * 0.05} inView>
+        <BlurFade delay={0.25 + 9 * 0.05} inView>
           <FormField
             name="name"
             control={form.control}
@@ -93,7 +93,7 @@ export default function ContactForm() {
             )}
           />
         </BlurFade>
-        <BlurFade delay={0.25 + 2 * 0.05} inView>
+        <BlurFade delay={0.25 + 10 * 0.05} inView>
           <FormField
             name="email"
             control={form.control}
@@ -111,7 +111,7 @@ export default function ContactForm() {
             )}
           />
         </BlurFade>
-        <BlurFade delay={0.25 + 3 * 0.05} inView>
+        <BlurFade delay={0.25 + 11 * 0.05} inView>
           <FormField
             name="message"
             control={form.control}
@@ -128,7 +128,7 @@ export default function ContactForm() {
           />
         </BlurFade>
         <div className="w-full text-right">
-          <BlurFade delay={0.25 + 4 * 0.05} inView>
+          <BlurFade delay={0.25 + 12 * 0.05} inView>
             <Button type="submit" disabled={state.submitting}>
               {state.submitting ? "SENDING..." : "SEND MESSAGE"}
             </Button>

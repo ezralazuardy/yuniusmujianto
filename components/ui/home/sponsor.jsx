@@ -28,7 +28,7 @@ export default function Sponsor() {
                   <Link href="https://lazuardy.tech" target="_blank">
                     <Image
                       alt="home-sponsor-1"
-                      src="/images/sponsor/sponsor-1.png"
+                      src="/images/sponsor/sponsor-1.webp"
                       width={0}
                       height={0}
                       sizes="100vw"

@@ -41,6 +41,10 @@
     }
 }
 
+.bg-main {
+    background-color: #040404;
+}
+
 .video-background {
     background-color: #040404;
     position: fixed;
