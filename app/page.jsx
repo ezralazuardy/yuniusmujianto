@@ -9,17 +9,10 @@ import Contact from "@/components/ui/home/contact";
 import ContentFirst from "@/components/ui/home/content-first";
 import ContentSecond from "@/components/ui/home/content-second";
 import Sponsor from "@/components/ui/home/sponsor";
-import { Button } from "@/components/ui/button";
 import Navigation from "@/components/ui/navigation";
-import {
-  IconMail,
-  IconBrandWhatsapp,
-  IconBrandInstagram,
-  IconBrandFacebook,
-  IconBrandYoutube,
-  IconBrandTiktok,
-  IconChevronsDown,
-} from "@tabler/icons-react";
+import Social from "@/components/ui/social";
+import { Button } from "@/components/ui/button";
+import { IconBrandWhatsapp, IconChevronsDown } from "@tabler/icons-react";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
@@ -360,69 +353,7 @@ export default function Home() {
               ref={footerSocial}
               className="opacity-100 transition-opacity duration-500 flex justify-center font-light text-md pt-6"
             >
-              <div className="me-8">
-                <Link href="https://wa.me/6281225822417" target="_blank">
-                  <IconMail
-                    size={20}
-                    stroke={1}
-                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
-                  />
-                </Link>
-              </div>
-              <div className="me-8">
-                <Link href="https://wa.me/6281225822417" target="_blank">
-                  <IconBrandWhatsapp
-                    size={20}
-                    stroke={1}
-                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
-                  />
-                </Link>
-              </div>
-              <div className="me-8">
-                <Link
-                  href="https://instagram.com/yunius_mujianto"
-                  target="_blank"
-                >
-                  <IconBrandInstagram
-                    size={20}
-                    stroke={1}
-                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
-                  />
-                </Link>
-              </div>
-              <div className="me-8">
-                <Link href="https://facebook.com/yunius.bridal" target="_blank">
-                  <IconBrandFacebook
-                    size={20}
-                    stroke={1}
-                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
-                  />
-                </Link>
-              </div>
-              <div className="me-8">
-                <Link
-                  href="https://tiktok.com/@yunius.mujianto"
-                  target="_blank"
-                >
-                  <IconBrandTiktok
-                    size={20}
-                    stroke={1}
-                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
-                  />
-                </Link>
-              </div>
-              <div className="me-0">
-                <Link
-                  href="https://youtube.com/@yuniusmujiantofashiondesig9646"
-                  target="_blank"
-                >
-                  <IconBrandYoutube
-                    size={20}
-                    stroke={1}
-                    className="text-white/70 hover:scale-125 hover:text-white transition-all duration-300"
-                  />
-                </Link>
-              </div>
+              <Social />
             </div>
             <div
               ref={footerCopyright}
