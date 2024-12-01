@@ -14,19 +14,19 @@ export default function Content() {
           <div
             className={`${Spectral.className} flex w-full text-left text-white text-7xl font-extralight`}
           >
-            <BlurFade delay={0.25 + 1 * 0.05} inView>
+            <BlurFade delay={0.5} inView>
               About Him.
             </BlurFade>
           </div>
           <div className="flex w-full text-justify text-gray-300 text-md font-extralight mt-10 max-w-2xl">
-            <BlurFade delay={0.25 + 2 * 0.05} inView>
+            <BlurFade delay={0.6} inView>
               Yunius Mujianto was born in Semarang on June 4, 1986 with his
               nickname Yunius. He has given a new color to the fashion world of
               Indonesia for more than 8 years.
             </BlurFade>
           </div>
           <div className="flex w-full text-justify text-gray-300 text-md font-extralight mt-6 max-w-2xl">
-            <BlurFade delay={0.25 + 3 * 0.05} inView>
+            <BlurFade delay={0.7} inView>
               With that experience we have learned everything we need to know
               about how to make kebaya or bridal that is different from the
               others which also offers extraordinary artistic value through the{" "}
@@ -35,7 +35,7 @@ export default function Content() {
             </BlurFade>
           </div>
           <div className="flex w-full mt-16">
-            <BlurFade delay={0.25 + 4 * 0.05} inView>
+            <BlurFade delay={0.8} inView>
               <Link href="/contact">
                 <Button
                   size="lg"
@@ -49,7 +49,7 @@ export default function Content() {
           </div>
         </div>
         <div className="flex flex-col w-full">
-          <BlurFade delay={0.25 + 5 * 0.05} inView>
+          <BlurFade delay={0.9} inView>
             <Image
               src={profile}
               className="my-10"

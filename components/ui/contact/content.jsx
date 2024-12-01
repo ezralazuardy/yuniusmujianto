@@ -5,7 +5,7 @@ import BlurFade from "@/components/ui/blur-fade";
 import logo from "@/public/images/logo.webp";
 import dynamic from "next/dynamic";
 
-export const DynamicMap = dynamic(() => import("@/components/ui/map"), {
+export const Map = dynamic(() => import("@/components/ui/map"), {
   ssr: false,
 });
 
@@ -31,7 +31,7 @@ export default function Content() {
         </div>
         <div className="flex flex-col w-full mt-6">
           <BlurFade delay={0.8} inView>
-            <DynamicMap />
+            <Map />
           </BlurFade>
         </div>
       </div>

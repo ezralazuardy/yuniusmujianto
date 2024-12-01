@@ -266,13 +266,13 @@ export default function Home() {
 
   return (
     <>
-      <Header ref={header} />
       <Video ref={video} />
       <div
         ref={hero}
         className="fixed top-0 start-0 w-full min-h-screen z-30 flex items-center justify-center px-10"
       >
         <div className="relative min-h-screen w-full">
+          <Header ref={header} />
           <div className="flex flex-col min-h-screen w-full justify-center text-center my-auto">
             <div
               ref={title}
@@ -317,7 +317,7 @@ export default function Home() {
           </div>
           <div
             ref={hint}
-            className="opacity-100 transition-opacity duration-500 fixed bottom-0 start-0 mb-10 w-full flex flex-col justify-center"
+            className="opacity-100 transition-opacity duration-500 absolute bottom-0 start-0 mb-10 w-full flex flex-col justify-center"
           >
             <div className="text-xs font-light text-gray-200 animate-pulse flex justify-center">
               <BlurFade delay={0.25 + 5 * 0.05} inView>
