@@ -46,7 +46,7 @@ const FormSchema = z.object({
     }),
 });
 
-export default function ContactForm() {
+export default function ContactForm({ fullWidth = false }) {
   const [state, handleSubmit] = useFormspree(
     process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID,
   );
@@ -66,7 +66,9 @@ export default function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <div className="w-full text-center font-semibold text-gray-300">
+      <div
+        className={`w-full text-center font-semibold text-gray-300 ${fullWidth ? "mb-8" : null}`}
+      >
         Thank you for sending us message!
         <br />
         We&apos;ll get back to you soon.
@@ -77,7 +79,7 @@ export default function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <BlurFade delay={0.25 + 9 * 0.05} inView>
+        <BlurFade delay={0.7} inView>
           <FormField
             name="name"
             control={form.control}
@@ -93,7 +95,7 @@ export default function ContactForm() {
             )}
           />
         </BlurFade>
-        <BlurFade delay={0.25 + 10 * 0.05} inView>
+        <BlurFade delay={0.8} inView>
           <FormField
             name="email"
             control={form.control}
@@ -111,7 +113,7 @@ export default function ContactForm() {
             )}
           />
         </BlurFade>
-        <BlurFade delay={0.25 + 11 * 0.05} inView>
+        <BlurFade delay={0.9} inView>
           <FormField
             name="message"
             control={form.control}
@@ -128,8 +130,12 @@ export default function ContactForm() {
           />
         </BlurFade>
         <div className="w-full text-right">
-          <BlurFade delay={0.25 + 12 * 0.05} inView>
-            <Button type="submit" disabled={state.submitting}>
+          <BlurFade delay={1} inView>
+            <Button
+              type="submit"
+              disabled={state.submitting}
+              className={`${fullWidth ? "w-full mt-2" : null}`}
+            >
               {state.submitting ? "SENDING..." : "SEND MESSAGE"}
             </Button>
           </BlurFade>
