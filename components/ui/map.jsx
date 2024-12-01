@@ -28,7 +28,8 @@ export default function Map() {
   useEffect(() => {
     const m = mapElement?.current;
 
-    if (!m) return;
+    if (!m || typeof window === "undefined" || typeof document === "undefined")
+      return;
 
     const map = L.map(m, { attributionControl: false }).setView(
       coordinate,

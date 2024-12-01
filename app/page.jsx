@@ -60,7 +60,7 @@ export default function Home() {
       !fs ||
       !fc ||
       typeof window === "undefined" ||
-      document === "undefined"
+      typeof document === "undefined"
     )
       return;
 

@@ -25,7 +25,8 @@ export default function Tiles() {
   const loading = useRef(null);
 
   useEffect(() => {
-    if (typeof window === "undefined" || document === "undefined") return;
+    if (typeof window === "undefined" || typeof document === "undefined")
+      return;
 
     const showCanvasTimer = setTimeout(() => {
       setShowCanvas(true);
