@@ -71,7 +71,6 @@ function Items({ w = 0.7, gap = 0.15 }) {
   useFrame(() => {
     if (canvasReady) return;
     state.canvasReady = true;
-    console.log("canvas is ready!");
   });
 
   return (

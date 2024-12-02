@@ -10,12 +10,12 @@ export default function Contact() {
       <div
         className={`${Spectral.className} lg:max-w-xl text-white font-light text-4xl lg:text-3xl text-center w-full leading-none tracking-normal mt-40 lg:mt-60`}
       >
-        <BlurFade delay={0.5} inView>
+        <BlurFade delay={0.3} inView>
           Feel Free to Reach Us
         </BlurFade>
       </div>
       <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-10 px-8 lg:px-0">
-        <BlurFade delay={0.6} inView>
+        <BlurFade delay={0.4} inView>
           We prefer to work closely with our clients to ensure that every
           product is a reflection of their unique style and personality. Please
           reach us via Email or Phone (WhatsApp) for any inquiries or
@@ -26,7 +26,7 @@ export default function Contact() {
         <ContactButtons />
       </div>
       <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-10 px-8 lg:px-0">
-        <BlurFade delay={0.9} inView>
+        <BlurFade delay={0.7} inView>
           Or fill the form below to directly send us a message.
         </BlurFade>
       </div>
@@ -38,7 +38,7 @@ export default function Contact() {
 }
 
 export function ContactButtons() {
-  let delay = 0.7;
+  let delay = 0.5;
 
   function incrementDelay() {
     const current = delay;

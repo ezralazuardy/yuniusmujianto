@@ -11,7 +11,7 @@ export default function ContentSecond() {
       <div
         className={`${Spectral.className} lg:max-w-xl text-center text-white font-light text-4xl lg:text-3xl w-full leading-none tracking-normal px-8 lg:px-0 mt-20 lg:mt-40`}
       >
-        <BlurFade delay={0.5} inView>
+        <BlurFade delay={0.3} inView>
           <div className="hidden lg:block">
             A Story of Elegance and Identity
           </div>
@@ -23,7 +23,7 @@ export default function ContentSecond() {
         </BlurFade>
       </div>
       <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-6 lg:mt-10 px-8 lg:px-0">
-        <BlurFade delay={0.6} inView>
+        <BlurFade delay={0.4} inView>
           Rooted in the philosophy of{" "}
           <span className="font-semibold text-white">
             &quot;The Luxurious Sense of Belonging&quot;

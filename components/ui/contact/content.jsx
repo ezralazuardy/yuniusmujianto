@@ -31,21 +31,21 @@ export default function Content() {
           <BlurFade delay={0.3} inView>
             <Image
               src={logo}
-              width={250}
+              width={240}
               height="auto"
               alt="logo"
               className="block lg:hidden"
             />
             <Image
               src={logo}
-              width={300}
+              width={250}
               height="auto"
               alt="logo"
               className="hidden lg:block"
             />
           </BlurFade>
         </div>
-        <div className="flex flex-col items-center w-full mt-12 lg:mt-8 px-10 lg:px-0">
+        <div className="flex flex-col items-center w-full mt-12 lg:mt-10 px-10 lg:px-0">
           <BlurFade delay={0.4} inView>
             <ContactButtons />
           </BlurFade>
@@ -55,7 +55,7 @@ export default function Content() {
             Or directly{" "}
             <Drawer>
               <DrawerTrigger>
-                <span className="ms-1 underline font-semibold text-gray-300 hover:text-white hover:text-bold">
+                <span className="ms-1 underline font-light text-gray-300 hover:text-white">
                   SEND US A MESSAGE
                 </span>
               </DrawerTrigger>
@@ -92,13 +92,18 @@ export default function Content() {
             </Drawer>
           </BlurFade>
         </div>
-        <div className="flex flex-col text-center w-full text-sm underline font-semibold text-gray-300 hover:text-white hover:text-bold mt-6 lg:mt-4 px-10 lg:px-0">
+        <div className="flex flex-col text-center w-full text-sm underline font-light text-gray-300 hover:text-white mt-6 lg:mt-8 px-10 lg:px-0">
           <BlurFade delay={0.6} inView>
-            Jl. Rowosari II, RT 02, RW I, Wonosari, Ngaliyan, Semarang, Central
-            Java, Indonesia 50244
+            <Link
+              href="https://google.com/maps/place/Jl.+Rowosari+II,+Wonosari,+Kec.+Ngaliyan,+Kota+Semarang,+Jawa+Tengah+50244/@-6.9737171,110.291647,17z/data=!4m15!1m8!3m7!1s0x2e705fd08e012d3f:0xb07c0b58ac9ba793!2sJl.+Rowosari+II,+Wonosari,+Kec.+Ngaliyan,+Kota+Semarang,+Jawa+Tengah+50244!3b1!8m2!3d-6.9737171!4d110.2942219!16s%2Fg%2F11bwg065w2!3m5!1s0x2e705fd08e012d3f:0xb07c0b58ac9ba793!8m2!3d-6.9737171!4d110.2942219!16s%2Fg%2F11bwg065w2?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+            >
+              Jl. Rowosari II, RT 02, RW I, Wonosari, Ngaliyan, Semarang,
+              Central Java, Indonesia 50244
+            </Link>
           </BlurFade>
         </div>
-        <div className="flex flex-col w-full mt-10 lg:mt-6">
+        <div className="flex flex-col w-full mt-10 lg:mt-8">
           <BlurFade delay={0.7} inView>
             <Map />
           </BlurFade>
