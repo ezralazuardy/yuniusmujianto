@@ -37,13 +37,14 @@ export default forwardRef(function Video(_, video) {
     <div className="relative min-h-screen">
       <div
         ref={frame}
-        className="opacity-0 transition-all duration-1000 absolute z-10 top-0 start-0 h-full w-full"
+        className="opacity-0 transition-all duration-1000 absolute z-10 top-0 start-0 h-full w-full pointer-events-none"
       >
         <video
           ref={video}
           autoPlay
           loop
           muted
+          playsinline
           className="hidden video-background"
         >
           <source src="videos/home.mp4" type="video/mp4" />
