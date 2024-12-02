@@ -120,7 +120,7 @@ export default function ContactForm({ fullWidth = false }) {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Messages</FormLabel>
+                <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea placeholder="Type your message here." {...field} />
                 </FormControl>
