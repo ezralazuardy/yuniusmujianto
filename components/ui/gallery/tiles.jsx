@@ -36,9 +36,9 @@ export default function Tiles() {
   });
 
   return (
-    <div className="flex w-full h-full max-h-screen">
+    <div className="flex w-full min-h-screen">
       {!canvasReady ? (
-        <div ref={loading} className="flex w-full h-full max-h-screen z-10">
+        <div ref={loading} className="flex w-full min-h-screen z-10">
           <div className="flex w-full my-auto justify-center">
             <BlurFade delay={0.25 + 6 * 0.05} inView>
               <Loading />
@@ -47,7 +47,7 @@ export default function Tiles() {
         </div>
       ) : null}
       {showCanvas ? (
-        <div className="absolute w-full h-full max-h-screen z-20">
+        <div className="absolute w-full min-h-screen z-20">
           <Canvas
             style={{ width: "100%", height: "100vh" }}
             gl={{ antialias: false, performance: "low-power" }}
