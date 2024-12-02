@@ -30,19 +30,19 @@ const FormSchema = z.object({
   email: z
     .string()
     .min(2, {
-      message: "Name must be at least 2 characters.",
+      message: "Email must be at least 2 characters.",
     })
     .max(100, {
-      message: "Name must be at most 100 characters.",
+      message: "Email must be at most 100 characters.",
     })
     .email(),
   message: z
     .string()
     .min(2, {
-      message: "Name must be at least 2 characters.",
+      message: "Message must be at least 2 characters.",
     })
     .max(3000, {
-      message: "Name must be at most 3000 characters.",
+      message: "Message must be at most 3000 characters.",
     }),
 });
 

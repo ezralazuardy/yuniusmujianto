@@ -6,10 +6,10 @@ import logo from "@/public/images/logo.webp";
 
 export default function ContentFirst() {
   return (
-    <div className="flex flex-col w-full px-20 min-h-screen pt-40">
-      <div className="w-full flex flex-col items-center justify-center mb-10">
+    <div className="flex flex-col w-full px-20 min-h-screen pt-28">
+      <div className="w-full flex flex-col items-center justify-center mb-16">
         <BlurFade delay={0.5} inView>
-          <Image src={logo} alt="logo" width={220} height="auto" />
+          <Image src={logo} alt="logo" width={240} height="auto" />
         </BlurFade>
       </div>
       <div className="w-full grid grid-cols-2">
