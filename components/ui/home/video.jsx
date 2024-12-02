@@ -44,7 +44,7 @@ export default forwardRef(function Video(_, video) {
           autoPlay
           loop
           muted
-          playsinline
+          playsInline
           className="hidden video-background"
         >
           <source src="videos/home.mp4" type="video/mp4" />
