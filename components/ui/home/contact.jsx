@@ -17,12 +17,12 @@ export default function Contact() {
       <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-10 px-8 lg:px-0">
         <BlurFade delay={0.6} inView>
           We prefer to work closely with our clients to ensure that every
-          product is a reflection of their unique style and personality. You can
-          reach us via Email or Phone (WhatsApp) for inquiries, collaborations,
-          or just to say hi.
+          product is a reflection of their unique style and personality. Please
+          reach us via Email or Phone (WhatsApp) for any inquiries or
+          collaborations.
         </BlurFade>
       </div>
-      <div className="flex w-full max-w-screen justify-center">
+      <div className="flex w-full max-w-screen justify-center mt-10">
         <ContactButtons />
       </div>
       <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-10 px-8 lg:px-0">
@@ -47,7 +47,7 @@ export function ContactButtons() {
   }
 
   return (
-    <div className="font-extralight text-md text-gray-300 mt-10 flex gap-10 pointer-events-auto">
+    <div className="font-extralight text-md text-gray-300 flex gap-10 pointer-events-auto">
       {contacts.map((contact, index) => (
         <BlurFade key={index} delay={incrementDelay()} inView>
           <Link href={contact.link} target={contact.target}>

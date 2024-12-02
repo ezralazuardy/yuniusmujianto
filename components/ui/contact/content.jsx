@@ -5,6 +5,7 @@ import Link from "next/link";
 import BlurFade from "@/components/ui/blur-fade";
 import ContactForm from "@/components/ui/home/contact-form";
 import { Button } from "@/components/ui/button";
+import { ContactButtons } from "@/components/ui/home/contact";
 import {
   Drawer,
   DrawerClose,
@@ -25,29 +26,38 @@ export const Map = dynamic(() => import("@/components/ui/map"), {
 export default function Content() {
   return (
     <div className="flex w-full min-h-screen">
-      <div className="flex flex-col w-full my-auto px-48">
-        <div className="flex flex-col items-center w-full">
-          <BlurFade delay={0.5} inView>
-            <Image src={logo} alt="logo" width={300} height="auto" />
+      <div className="flex flex-col w-full my-auto lg:px-48 pb-12 lg:pb-0">
+        <div className="flex flex-col items-center w-full px-10 lg:px-0">
+          <BlurFade delay={0.3} inView>
+            <Image
+              src={logo}
+              width={250}
+              height="auto"
+              alt="logo"
+              className="block lg:hidden"
+            />
+            <Image
+              src={logo}
+              width={300}
+              height="auto"
+              alt="logo"
+              className="hidden lg:block"
+            />
           </BlurFade>
         </div>
-        <div className="flex gap-1 text-center items-center justify-center w-full font-extralight text-sm text-white mt-6">
-          <BlurFade delay={0.6} inView>
-            Phone (WhatsApp):{" "}
-            <Link
-              href="https://wa.me/6281225822417"
-              target="_blank"
-              className="underline hover:font-white hover:text-light"
-            >
-              +62 812-2582-2417
-            </Link>{" "}
-            or{" "}
+        <div className="flex flex-col items-center w-full mt-12 lg:mt-8 px-10 lg:px-0">
+          <BlurFade delay={0.4} inView>
+            <ContactButtons />
+          </BlurFade>
+        </div>
+        <div className="flex gap-1 text-center items-center justify-center w-full font-extralight text-sm text-white mt-4 lg:mt-2 px-10 lg:px-0">
+          <BlurFade delay={0.5} inView>
+            Or directly{" "}
             <Drawer>
               <DrawerTrigger>
-                <span className="underline hover:font-white hover:text-light">
-                  Send us a message
+                <span className="ms-1 underline font-semibold text-gray-300 hover:text-white hover:text-bold">
+                  SEND US A MESSAGE
                 </span>
-                .
               </DrawerTrigger>
               <DrawerContent className="rounded-none">
                 <div className="mx-auto w-full max-w-lg py-6">
@@ -82,14 +92,14 @@ export default function Content() {
             </Drawer>
           </BlurFade>
         </div>
-        <div className="flex flex-col text-center w-full font-extralight text-sm text-gray-300 mt-4">
-          <BlurFade delay={0.7} inView>
+        <div className="flex flex-col text-center w-full text-sm underline font-semibold text-gray-300 hover:text-white hover:text-bold mt-6 lg:mt-4 px-10 lg:px-0">
+          <BlurFade delay={0.6} inView>
             Jl. Rowosari II, RT 02, RW I, Wonosari, Ngaliyan, Semarang, Central
             Java, Indonesia 50244
           </BlurFade>
         </div>
-        <div className="flex flex-col w-full mt-6">
-          <BlurFade delay={0.8} inView>
+        <div className="flex flex-col w-full mt-10 lg:mt-6">
+          <BlurFade delay={0.7} inView>
             <Map />
           </BlurFade>
         </div>

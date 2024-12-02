@@ -12,7 +12,14 @@ export default function ContentSecond() {
         className={`${Spectral.className} lg:max-w-xl text-center text-white font-light text-4xl lg:text-3xl w-full leading-none tracking-normal px-8 lg:px-0 mt-20 lg:mt-40`}
       >
         <BlurFade delay={0.5} inView>
-          A Story of Elegance and Identity
+          <div className="hidden lg:block">
+            A Story of Elegance and Identity
+          </div>
+          <div className="block lg:hidden">
+            A Story of
+            <br />
+            Elegance and Identity
+          </div>
         </BlurFade>
       </div>
       <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-6 lg:mt-10 px-8 lg:px-0">
@@ -35,20 +42,20 @@ export default function ContentSecond() {
         </Parallax>
       </div>
       <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-12 lg:mt-16 px-8 lg:px-0">
-        <BlurFade delay={0.7} inView>
+        <BlurFade delay={0.5} inView>
           At <span className="font-semibold text-white">Yunius Mujianto</span>,
           we believe in creating more than just fashion.
         </BlurFade>
       </div>
       <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-6 px-8 lg:px-0">
-        <BlurFade delay={0.8} inView>
+        <BlurFade delay={0.6} inView>
           Experience the timeless artistry and modern refinement that have made{" "}
           <span className="font-semibold text-white">Yunius Kebaya Bride</span>{" "}
           a symbol of luxury and individuality in the world of fashion.
         </BlurFade>
       </div>
       <div className="max-w-xl w-full mt-8 lg:mt-12 pointer-events-auto px-8 lg:px-0">
-        <BlurFade delay={0.9} inView className="hidden lg:flex justify-end">
+        <BlurFade delay={0.7} inView className="hidden lg:flex justify-end">
           <Link href="/gallery">
             <Button
               size="default"
@@ -58,7 +65,7 @@ export default function ContentSecond() {
             </Button>
           </Link>
         </BlurFade>
-        <BlurFade delay={0.9} inView className="flex lg:hidden justify-end">
+        <BlurFade delay={0.7} inView className="flex lg:hidden justify-end">
           <Link href="/gallery">
             <Button
               size="sm"
