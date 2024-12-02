@@ -366,7 +366,7 @@ export default function Home() {
       </div>
       <div className="absolute top-0 start-0 w-full min-h-screen z-50 pointer-events-none">
         <div className="relative w-full min-h-screen pointer-events-none"></div>
-        <div className="relative [background:radial-gradient(125%_22%_at_50%_10%,#040404_40%,#161617_100%)] pt-60 pb-20 flex flex-col justify-center items-center border-t border-b border-gray-600">
+        <div className="relative [background:radial-gradient(125%_22%_at_50%_10%,#040404_40%,#161617_100%)] py-20 flex flex-col justify-center items-center border-t border-b border-gray-600">
           <ContentFirst />
           <ContentSecond />
           <Sponsor />

@@ -9,7 +9,7 @@ export default function ContentSecond() {
   return (
     <>
       <div
-        className={`${Spectral.className} max-w-xl font-light text-3xl text-center w-full leading-none tracking-normal mt-80`}
+        className={`${Spectral.className} max-w-xl font-light text-3xl text-center w-full leading-none tracking-normal mt-40`}
       >
         <BlurFade delay={0.25 + 1 * 0.05} inView>
           — A Story of Elegance and Identity —
