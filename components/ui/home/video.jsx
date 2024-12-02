@@ -49,7 +49,7 @@ export default forwardRef(function Video(_, video) {
           <source src="videos/home.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="absolute z-20 top-0 start-0 h-full w-full bg-black/60"></div>
+      <div className="fixed z-20 top-0 start-0 h-full w-full bg-black/60"></div>
     </div>
   );
 });

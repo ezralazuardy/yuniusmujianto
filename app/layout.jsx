@@ -15,7 +15,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${Inter.className} antialiased`}>
+      <body className={`${Inter.className} antialiased w-full max-w-screen`}>
         <SmoothScrolling>{children}</SmoothScrolling>
         <Analytics />
       </body>

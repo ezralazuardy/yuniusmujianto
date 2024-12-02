@@ -1,35 +1,35 @@
 import Link from "next/link";
-import BlurFade from "./blur-fade";
+import BlurFade from "@/components/ui/blur-fade";
 
 export default function Navigation() {
   return (
     <div className="flex justify-center font-light text-md text-gray-200">
-      <div className="me-5">
+      <div className="me-3 lg:me-5">
         <BlurFade delay={0.25 + 1 * 0.05} inView>
           <Link href="/">home</Link>
         </BlurFade>
       </div>
-      <div className="me-5">
+      <div className="me-3 lg:me-5">
         <BlurFade delay={0.25 + 2 * 0.05} inView>
           —
         </BlurFade>
       </div>
-      <div className="me-5">
+      <div className="me-3 lg:me-5">
         <BlurFade delay={0.25 + 3 * 0.05} inView>
           <Link href="/gallery">gallery</Link>
         </BlurFade>
       </div>
-      <div className="me-5">
+      <div className="me-3 lg:me-5">
         <BlurFade delay={0.25 + 4 * 0.05} inView>
           —
         </BlurFade>
       </div>
-      <div className="me-5">
+      <div className="me-3 lg:me-5">
         <BlurFade delay={0.25 + 5 * 0.05} inView>
           <Link href="/about">about</Link>
         </BlurFade>
       </div>
-      <div className="me-5">
+      <div className="me-3 lg:me-5">
         <BlurFade delay={0.25 + 6 * 0.05} inView>
           —
         </BlurFade>

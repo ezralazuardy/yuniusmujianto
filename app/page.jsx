@@ -269,32 +269,32 @@ export default function Home() {
       <Video ref={video} />
       <div
         ref={hero}
-        className="fixed top-0 start-0 w-full min-h-screen z-30 flex items-center justify-center px-10"
+        className="fixed top-0 start-0 w-full max-w-screen min-h-screen z-30 flex items-center justify-center"
       >
-        <div className="relative min-h-screen w-full">
+        <div className="relative w-full max-w-screen min-h-screen px-6">
           <Header ref={header} />
           <div className="flex flex-col min-h-screen w-full justify-center text-center my-auto">
             <div
               ref={title}
-              className={`${Spectral.className} opacity-100 transition-opacity duration-500 text-7xl font-extralight`}
+              className={`${Spectral.className} opacity-100 transition-opacity duration-500 text-6xl lg:text-7xl font-extralight`}
             >
-              <BlurFade delay={0.25 + 1 * 0.05} inView>
+              <BlurFade delay={0.5} inView>
                 The Luxurious Sense of Belonging
               </BlurFade>
             </div>
             <div
               ref={subtitle1}
-              className={`${Spectral.className} opacity-100 transition-opacity duration-500 pt-10 text-4xl font-extralight`}
+              className={`${Spectral.className} opacity-100 transition-opacity duration-500 pt-10 text-3xl lg:text-4xl font-extralight`}
             >
-              <BlurFade delay={0.25 + 2 * 0.05} inView>
+              <BlurFade delay={0.6} inView>
                 — YUNIUS MUJIANTO —
               </BlurFade>
             </div>
             <div
               ref={subtitle2}
-              className="opacity-100 transition-opacity duration-500 pt-12 text-lg font-extralight text-gray-200"
+              className="opacity-100 transition-opacity duration-500 pt-12 text-sm lg:text-lg font-extralight text-gray-200"
             >
-              <BlurFade delay={0.25 + 3 * 0.05} inView>
+              <BlurFade delay={0.7} inView>
                 MODERN KEBAYA, BRIDAL, AND FASHION DESIGNER
               </BlurFade>
             </div>
@@ -302,14 +302,14 @@ export default function Home() {
               ref={button}
               className="opacity-100 transition-opacity duration-500 pt-8"
             >
-              <BlurFade delay={0.25 + 4 * 0.05} inView>
+              <BlurFade delay={0.8} inView>
                 <Link href="https://wa.me/6281225822417" target="_blank">
                   <Button
-                    size="lg"
+                    size="default"
                     className="hover:shadow-2xl hover:scale-105 transition-transform duration:500"
                   >
                     <IconBrandWhatsapp className="w-5 h-5" />
-                    CALL VIA WHATSAPP
+                    Call Via WhatsApp
                   </Button>
                 </Link>
               </BlurFade>
@@ -320,12 +320,12 @@ export default function Home() {
             className="opacity-100 transition-opacity duration-500 absolute bottom-0 start-0 mb-10 w-full flex flex-col justify-center"
           >
             <div className="text-xs font-light text-gray-200 animate-pulse flex justify-center">
-              <BlurFade delay={0.25 + 5 * 0.05} inView>
+              <BlurFade delay={0.9} inView>
                 SCROLL BELOW TO LEARN MORE
               </BlurFade>
             </div>
             <div className="pt-2 flex justify-center">
-              <BlurFade delay={0.25 + 6 * 0.05} inView>
+              <BlurFade delay={1} inView>
                 <IconChevronsDown
                   size={40}
                   stroke={0.8}
@@ -338,9 +338,12 @@ export default function Home() {
       </div>
       <div
         ref={blur}
-        className="hidden top-0 start-0 w-full min-h-screen z-40 backdrop-blur bg-black/70"
+        className="hidden top-0 start-0 w-full max-w-screen min-h-screen z-40 backdrop-blur bg-black/70"
       ></div>
-      <div ref={footer} className="hidden bottom-0 start-0 w-full z-50">
+      <div
+        ref={footer}
+        className="hidden bottom-0 start-0 w-full max-w-screen z-50"
+      >
         <div className="relative w-full">
           <div className="pb-10 text-center flex flex-col text-gray-200">
             <div
@@ -364,7 +367,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 start-0 w-full min-h-screen z-50 pointer-events-none">
+      <div className="absolute top-0 start-0 w-full max-w-screen min-h-screen z-50 pointer-events-none">
         <div className="relative w-full min-h-screen pointer-events-none"></div>
         <div className="relative [background:radial-gradient(125%_22%_at_50%_10%,#040404_40%,#161617_100%)] py-20 flex flex-col justify-center items-center border-t border-b border-gray-600">
           <ContentFirst />

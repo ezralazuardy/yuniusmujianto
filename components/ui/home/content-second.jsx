@@ -9,14 +9,14 @@ export default function ContentSecond() {
   return (
     <>
       <div
-        className={`${Spectral.className} max-w-xl font-light text-3xl text-center w-full leading-none tracking-normal mt-40`}
+        className={`${Spectral.className} lg:max-w-xl text-center text-white font-light text-4xl lg:text-3xl w-full leading-none tracking-normal px-8 lg:px-0 mt-20 lg:mt-40`}
       >
-        <BlurFade delay={0.25 + 1 * 0.05} inView>
-          — A Story of Elegance and Identity —
+        <BlurFade delay={0.5} inView>
+          A Story of Elegance and Identity
         </BlurFade>
       </div>
-      <div className="max-w-xl font-extralight text-md text-gray-300 text-justify w-full mt-10">
-        <BlurFade delay={0.25 + 2 * 0.05} inView>
+      <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-6 lg:mt-10 px-8 lg:px-0">
+        <BlurFade delay={0.6} inView>
           Rooted in the philosophy of{" "}
           <span className="font-semibold text-white">
             &quot;The Luxurious Sense of Belonging&quot;
@@ -25,7 +25,7 @@ export default function ContentSecond() {
           every woman to embrace her beauty with pride.
         </BlurFade>
       </div>
-      <div className="w-full mt-16">
+      <div className="w-full mt-12 lg:mt-16">
         <Parallax
           bgImage="/images/home/image-2.webp"
           className="aspect-video object-cover border-t border-b border-gray-600 bg-zinc-950 max-h-screen w-full"
@@ -34,27 +34,37 @@ export default function ContentSecond() {
           <div style={{ height: "auto" }}></div>
         </Parallax>
       </div>
-      <div className="max-w-xl font-extralight text-md text-gray-300 text-justify w-full mt-16">
-        <BlurFade delay={0.25 + 3 * 0.05} inView>
+      <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-12 lg:mt-16 px-8 lg:px-0">
+        <BlurFade delay={0.7} inView>
           At <span className="font-semibold text-white">Yunius Mujianto</span>,
           we believe in creating more than just fashion.
         </BlurFade>
       </div>
-      <div className="max-w-xl font-extralight text-md text-gray-300 text-justify w-full mt-6">
-        <BlurFade delay={0.25 + 4 * 0.05} inView>
+      <div className="max-w-xl font-extralight text-sm lg:text-md text-gray-300 text-justify w-full mt-6 px-8 lg:px-0">
+        <BlurFade delay={0.8} inView>
           Experience the timeless artistry and modern refinement that have made{" "}
           <span className="font-semibold text-white">Yunius Kebaya Bride</span>{" "}
           a symbol of luxury and individuality in the world of fashion.
         </BlurFade>
       </div>
-      <div className="max-w-xl text-right w-full mt-12 pointer-events-auto">
-        <BlurFade delay={0.25 + 5 * 0.05} inView>
+      <div className="max-w-xl w-full mt-8 lg:mt-12 pointer-events-auto px-8 lg:px-0">
+        <BlurFade delay={0.9} inView className="hidden lg:flex justify-end">
           <Link href="/gallery">
             <Button
-              size="lg"
+              size="default"
               className="hover:shadow-2xl hover:scale-105 transition-transform duration:500"
             >
-              SEE OUR GALLERY <IconPhoto className="w-5 h-5" />
+              See Our Gallery <IconPhoto className="w-5 h-5" />
+            </Button>
+          </Link>
+        </BlurFade>
+        <BlurFade delay={0.9} inView className="flex lg:hidden justify-end">
+          <Link href="/gallery">
+            <Button
+              size="sm"
+              className="hover:shadow-2xl hover:scale-105 transition-transform duration:500"
+            >
+              See Our Gallery <IconPhoto className="w-5 h-5" />
             </Button>
           </Link>
         </BlurFade>

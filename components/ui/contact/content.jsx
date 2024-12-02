@@ -49,7 +49,7 @@ export default function Content() {
                 </span>
                 .
               </DrawerTrigger>
-              <DrawerContent>
+              <DrawerContent className="rounded-none">
                 <div className="mx-auto w-full max-w-lg py-6">
                   <DrawerHeader className="pb-0">
                     <BlurFade delay={0.5} inView>
@@ -68,8 +68,11 @@ export default function Content() {
                     </div>
                     <BlurFade delay={1.1} inView>
                       <DrawerClose asChild>
-                        <Button variant="outline" className="w-full">
-                          CLOSE
+                        <Button
+                          variant="outline"
+                          className="w-full hover:shadow-2xl hover:scale-105 transition-transform duration:500"
+                        >
+                          Close
                         </Button>
                       </DrawerClose>
                     </BlurFade>
