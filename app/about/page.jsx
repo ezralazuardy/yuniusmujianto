@@ -7,7 +7,9 @@ export default function Page() {
     <>
       <Header />
       <Content />
-      <Footer />
+      <div className="hidden lg:block fixed bottom-0 start-0 w-full">
+        <Footer />
+      </div>
     </>
   );
 }

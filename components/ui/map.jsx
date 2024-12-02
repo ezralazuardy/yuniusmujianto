@@ -6,9 +6,9 @@ import "leaflet/dist/leaflet.css";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+  iconRetinaUrl: "/images/marker-icon-2x.png",
+  iconUrl: "/images/marker-icon.png",
+  shadowUrl: "/images/marker-shadow.png",
 });
 
 // https://google.com/maps/place/Jl.+Rowosari+II,+Wonosari,+Kec.+Ngaliyan,+Kota+Semarang,+Jawa+Tengah+50244/@-6.9737171,110.291647,17z/data=!4m15!1m8!3m7!1s0x2e705fd08e012d3f:0xb07c0b58ac9ba793!2sJl.+Rowosari+II,+Wonosari,+Kec.+Ngaliyan,+Kota+Semarang,+Jawa+Tengah+50244!3b1!8m2!3d-6.9737171!4d110.2942219!16s%2Fg%2F11bwg065w2!3m5!1s0x2e705fd08e012d3f:0xb07c0b58ac9ba793!8m2!3d-6.9737171!4d110.2942219!16s%2Fg%2F11bwg065w2?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D

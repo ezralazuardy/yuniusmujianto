@@ -36,9 +36,9 @@ export default function Tiles() {
   });
 
   return (
-    <div className="flex w-full min-h-screen">
+    <div className="flex w-full h-full max-h-screen">
       {!canvasReady ? (
-        <div ref={loading} className="flex w-full min-h-screen z-10">
+        <div ref={loading} className="flex w-full h-full max-h-screen z-10">
           <div className="flex w-full my-auto justify-center">
             <BlurFade delay={0.25 + 6 * 0.05} inView>
               <Loading />
@@ -47,7 +47,7 @@ export default function Tiles() {
         </div>
       ) : null}
       {showCanvas ? (
-        <div className="absolute w-full min-h-screen z-20">
+        <div className="absolute w-full h-full max-h-screen z-20">
           <Canvas
             style={{ width: "100%", height: "100vh" }}
             gl={{ antialias: false, performance: "low-power" }}
@@ -134,6 +134,7 @@ function Item({ index, position, scale, c = new THREE.Color(), ...props }) {
   return (
     <Image
       {...props}
+      className="pb-10"
       alt={`image-${index}`}
       ref={ref}
       position={position}

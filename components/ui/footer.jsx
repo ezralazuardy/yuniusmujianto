@@ -3,7 +3,7 @@ import Social from "@/components/ui/social";
 
 export default function Footer() {
   return (
-    <div className="fixed bottom-0 start-0 w-full mb-8 lg:mb-10 px-10 lg:px-48 grid lg:grid-cols-2">
+    <div className="w-full mb-8 lg:mb-10 px-10 lg:px-48 grid lg:grid-cols-2">
       <div className="flex justify-center lg:justify-start font-extralight text-sm text-white">
         <BlurFade delay={0.5} inView>
           <Social />

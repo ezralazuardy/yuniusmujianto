@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Spectral from "@/lib/fonts/spectral";
 import BlurFade from "@/components/ui/blur-fade";
+import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { IconPhone } from "@tabler/icons-react";
 import profile from "@/public/images/profile.webp";
@@ -9,9 +10,9 @@ import profile from "@/public/images/profile.webp";
 export default function Content() {
   return (
     <div className="flex w-full min-h-screen">
-      <div className="grid lg:grid-cols-4 w-full my-auto lg:px-48 pb-8 lg:pb-0">
-        <div className="flex flex-col w-full col-span-3 my-auto">
-          <div className="flex lg:hidden w-full mb-8">
+      <div className="grid lg:grid-cols-4 w-full lg:my-auto lg:px-48 pb-8 lg:pb-0">
+        <div className="flex flex-col w-full col-span-3 lg:my-auto">
+          <div className="flex lg:hidden w-full mt-36 mb-8">
             <BlurFade delay={0.3} inView className="w-full">
               <Image
                 src={profile}
@@ -66,6 +67,9 @@ export default function Content() {
                 </Button>
               </Link>
             </BlurFade>
+          </div>
+          <div className="flex lg:hidden w-full mt-24">
+            <Footer />
           </div>
         </div>
         <div className="hidden lg:flex flex-col w-full">

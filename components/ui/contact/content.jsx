@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BlurFade from "@/components/ui/blur-fade";
+import Footer from "@/components/ui/footer";
 import ContactForm from "@/components/ui/home/contact-form";
 import { Button } from "@/components/ui/button";
 import { ContactButtons } from "@/components/ui/home/contact";
@@ -26,8 +27,8 @@ export const Map = dynamic(() => import("@/components/ui/map"), {
 export default function Content() {
   return (
     <div className="flex w-full min-h-screen">
-      <div className="flex flex-col w-full my-auto lg:px-48 pb-12 lg:pb-0">
-        <div className="flex flex-col items-center w-full px-10 lg:px-0">
+      <div className="flex flex-col w-full lg:my-auto lg:px-48 pb-12 lg:pb-0">
+        <div className="flex flex-col items-center w-full px-10 lg:px-0 mt-36 lg:mt-0">
           <BlurFade delay={0.3} inView>
             <Image
               src={logo}
@@ -107,6 +108,9 @@ export default function Content() {
           <BlurFade delay={0.7} inView>
             <Map />
           </BlurFade>
+        </div>
+        <div className="flex flex-col lg:hidden w-full mt-24">
+          <Footer />
         </div>
       </div>
     </div>
