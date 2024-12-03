@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content={metadata.description} />
         <meta
           property="og:image"
-          content={`${process.env.NEXT_PUBLIC_APP_URL}/images/og-image.png`}
+          content={`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`}
         />
         <meta property="og:image:alt" content={metadata.description} />
         <meta property="og:type" content="website" />
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content={metadata.description} />
         <meta
           name="twitter:image"
-          content={`${process.env.NEXT_PUBLIC_APP_URL}/images/og-image.png`}
+          content={`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`}
         />
         <meta name="twitter:image:alt" content={metadata.description} />
         <meta name="twitter:creator" content="@yuniusmujianto" />
