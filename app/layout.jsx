@@ -6,8 +6,53 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://yuniusmujianto.com"),
   title: "Yunius Mujianto",
   description: "The Luxurious Sense of Belonging.",
+  generator: "Next.js",
+  applicationName: "Yunius Mujianto",
+  referrer: "origin-when-cross-origin",
+  creator: "Lazuardy",
+  publisher: "Lazuardy",
+  manifest: "https://yuniusmujianto.com/manifest.json",
+  category:
+    "kebaya, bridal, fashion, designer, modern, shirt, wedding, model, outfit",
+  keywords: [
+    "kebaya",
+    "bridal",
+    "fashion",
+    "designer",
+    "modern",
+    "shirt",
+    "wedding",
+    "model",
+    "outfit",
+  ],
+  authors: [{ name: "Yunius Mujianto", url: "https://yuniusmujianto.com" }],
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    shortcut: "/favicon.ico",
+    icon: "/apple-touch-icon.png",
+    apple: [
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon.png",
+    },
+  },
 };
 
 export const viewport = {
@@ -18,51 +63,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        {/* Basic Meta */}
-        <title>{metadata.title}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={metadata.description} />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/favicon-96x96.png"
-          sizes="96x96"
-        />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <meta name="apple-mobile-web-app-title" content="Yunius" />
         <link rel="manifest" href="/site.webmanifest" />
-
-        {/* Open Graph Meta */}
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
-        <meta
-          property="og:image"
-          content={`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`}
-        />
-        <meta property="og:image:alt" content={metadata.description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={process.env.NEXT_PUBLIC_APP_URL} />
-
-        {/* Twitter Card Meta */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
-        <meta
-          name="twitter:image"
-          content={`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`}
-        />
-        <meta name="twitter:image:alt" content={metadata.description} />
-        <meta name="twitter:creator" content="@yuniusmujianto" />
-
-        {/* Theme Color */}
-        <meta name="theme-color" content="#040404" />
       </Head>
       <body className={`${Inter.className} antialiased w-full max-w-screen`}>
         <SmoothScrolling>{children}</SmoothScrolling>

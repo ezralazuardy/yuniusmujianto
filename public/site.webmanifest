@@ -1,6 +1,11 @@
 {
   "name": "Yunius Mujianto",
   "short_name": "Yunius",
+  "description": "The Luxurious Sense of Belonging",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040404",
+  "theme_color": "#040404",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +20,4 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#040404",
-  "background_color": "#040404",
-  "display": "standalone"
 }
