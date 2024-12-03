@@ -76,7 +76,7 @@ export default function Content() {
           <BlurFade delay={0.8} inView>
             <Image
               src={profile}
-              className="my-10"
+              className="my-10 filter grayscale"
               alt="Yunius Mujianto"
               width="100%"
               height="auto"
