@@ -2,6 +2,7 @@ import Head from "next/head";
 import SmoothScrolling from "@/components/smooth-scrolling";
 import Inter from "@/lib/fonts/inter";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 export const metadata = {
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
       <body className={`${Inter.className} antialiased w-full max-w-screen`}>
         <SmoothScrolling>{children}</SmoothScrolling>
         <Analytics />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
       </body>
     </html>
   );
