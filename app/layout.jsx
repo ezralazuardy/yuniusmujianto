@@ -42,7 +42,10 @@ export default function RootLayout({ children }) {
         {/* Open Graph Meta */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content="/images/og-image.png" />
+        <meta
+          property="og:image"
+          content={`${process.env.NEXT_PUBLIC_APP_URL}/images/og-image.png`}
+        />
         <meta property="og:image:alt" content={metadata.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_APP_URL} />
@@ -51,7 +54,10 @@ export default function RootLayout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content={metadata.image} />
+        <meta
+          name="twitter:image"
+          content={`${process.env.NEXT_PUBLIC_APP_URL}/images/og-image.png`}
+        />
         <meta name="twitter:image:alt" content={metadata.description} />
         <meta name="twitter:creator" content="@yuniusmujianto" />
 
