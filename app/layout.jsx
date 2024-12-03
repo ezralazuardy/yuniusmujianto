@@ -41,18 +41,6 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    shortcut: "/favicon.ico",
-    icon: "/apple-touch-icon.png",
-    apple: [
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon.png",
-    },
-  },
 };
 
 export const viewport = {
