@@ -26,6 +26,7 @@
     "@vercel/analytics": "^1.4.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "crisp-sdk-web": "^1.0.25",
     "framer-motion": "^11.12.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.461.0",

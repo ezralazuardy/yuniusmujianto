@@ -3,7 +3,10 @@ import SmoothScrolling from "@/components/smooth-scrolling";
 import Inter from "@/lib/fonts/inter";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
+
+const Crisp = dynamic(() => import("@/components/crisp"));
 
 export const metadata = {
   metadataBase: new URL("https://yuniusmujianto.com"),
@@ -55,6 +58,7 @@ export default function RootLayout({ children }) {
       </Head>
       <body className={`${Inter.className} antialiased w-full max-w-screen`}>
         <SmoothScrolling>{children}</SmoothScrolling>
+        <Crisp />
         <Analytics />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
       </body>
