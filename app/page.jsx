@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import Link from "next/link";
 import Spectral from "@/lib/fonts/spectral";
 import BlurFade from "@/components/ui/blur-fade";
@@ -266,6 +267,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_APP_URL}`} />
+      </Head>
       <Video ref={video} />
       <div
         ref={hero}
